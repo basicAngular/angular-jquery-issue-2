@@ -1,0 +1,38 @@
+<div class="login-container" id="cloud-container">
+ <div class="login-box animated fadeInDown">
+    <!--<div class="login-logo"></div>-->
+    <div class="login-body">
+      <div class="login-title"><strong>Welcome Admin</strong>, Please login</div>
+        
+      <form class="form-horizontal" (ngSubmit)="onSubmit(fm)" #fm="ngForm" >
+        <div *ngIf="ErrorMessage" class="alert alert-danger">
+        	<button  type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        	<strong>{{ ErrorMessage }}</strong>
+        </div>  
+        <div class="form-group">
+          <div class="col-md-12">
+            <input type="text" class="form-control" ngModel name="email" required placeholder="Username">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+            <input type="password" class="form-control" ngModel name="password" required  placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6">
+            <a routerLink="/forget-password" class="btn btn-link btn-block">Forgot your password?</a>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-info btn-block">Log In</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="login-footer">
+      <div class="pull-left">
+        © {{ today | date: 'yyyy' }} Consular Insights
+      </div>
+    </div>
+  </div>
+</div>
